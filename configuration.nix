@@ -37,8 +37,11 @@
   };
 
 #==RED-E-INTERNET==#
-  # Establece el Nombre del Host
-  networking.hostName = "NixOS-Latitude-7280";
+  # Establece el Nombre del Host (Asus)
+  networking.hostName = "NixOS-Vivobook-15";
+
+  # Establece el Nombre del Host (Dell)
+  # networking.hostName = "NixOS-Latitude-7280";
 
   # Habilita la Red
   networking.networkmanager.enable = true;
