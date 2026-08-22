@@ -7,7 +7,7 @@
     ];
 
 #==CONFIGURACION-DE-GRUB-Y-SYSTEMD==#
-  # Instala Grub
+  # Instala GRUB
   boot.loader = {
     grub = {
       enable = true;
@@ -179,7 +179,8 @@
   environment.systemPackages = with pkgs; [
     # Entorno :
     rofi rofi-power-menu waybar swayidle swaylock-effects kanshi
-    nwg-look pulsemixer bluetuith nemo engrampa zip unzip eom
+    nwg-look pulsemixer bluetuith nemo engrampa zip unzip eom 
+    xdg-user-dirs xdg-desktop-portal
 
     # Temas :  
     papirus-icon-theme graphite-cursors tokyonight-gtk-theme
@@ -190,7 +191,7 @@
     pciutils
 
     # Mis Programas :
-    ungoogled-chromium foot discord telegram-desktop obs-studio nocturne
+    ungoogled-chromium foot discord telegram-desktop obs-studio strawberry
     filezilla vlc kdePackages.kdenlive vscodium obsidian libresprite  
     retroarch 
   ];
