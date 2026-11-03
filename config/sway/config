@@ -29,7 +29,7 @@
 
 #==CONFIGURACION-DE-LAS-SALIDAS==#
   # Establece el Wallpaper
-  output * bg /home/antsoftware21/Imágenes/Wallpapers/Anime-Skyline.png fill
+  output * bg /home/antsoftware21/Pictures/Wallpapers/Lucky-Star/7-Patricia.jpg fill
 
   # Ejecuta el Bloqueo y la Suspension
   exec swayidle -w \

@@ -15,8 +15,15 @@ sudo cp configuration.nix /etc/nixos/configuration.nix
 # Aplicacion de la Config
 sudo nixos-rebuild switch
 
-#==PREPARA-BASH==#
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
+#==PREPARA-FISH==#
+fish << 'EOF'
+# Instala el gestor de plugins fisher
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 
-# Copia del .bashrc
-cp .bashrc ~/
+# Instala plugins adicionales
+fisher install jorgebucaran/fisher
+fisher install IlanCosman/tide@v6
+EOF
+
+# Avisa de la existencia de mis apps en AppImage
+echo "No olvides instalar las apps : Osu!, SKlauncher y Raspberry Pi Imager desde AppImage"

@@ -8,6 +8,8 @@
 
 #==CONFIGURACION-DE-GRUB-Y-SYSTEMD==#
   # Instala GRUB
+
+  # Modo UEFI  
   boot.loader = {
     grub = {
       enable = true;
@@ -16,6 +18,11 @@
     };
     efi.canTouchEfiVariables = true;
   };
+  
+  # Modo BIOS
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.device = "/dev/sda";
+
 
   # Hace que SystemD Ignore el Boton de Apagado
   services.logind.settings.Login.HandlePowerKey = "ignore";
@@ -102,6 +109,9 @@
   console.keyMap = "es";
 
 #==CONFIGURACION-DEL-ENTORNO==#
+  # Activa fish
+  programs.fish.enable = true;
+
   # Instala el Display Manager
   services.displayManager.ly = {
     enable = true;
@@ -127,6 +137,7 @@
     isNormalUser = true;
     description = "Antsoftware21";
     extraGroups = [ "networkmanager" "wheel" "libvirtd" "kvm" "podman" "adbusers" ];
+    shell = pkgs.fish;
 
   # Rangos de subUID y subGID para contenedores rootless
   subUidRanges = [ { count = 65536; startUid = 100000; } ];
@@ -191,9 +202,9 @@
     pciutils
 
     # Mis Programas :
-    ungoogled-chromium foot discord telegram-desktop obs-studio strawberry
-    filezilla vlc kdePackages.kdenlive vscodium obsidian libresprite  
-    retroarch 
+    librewolf kitty discord telegram-desktop strawberry obs-studio
+    vscodium obsidian libresprite krita kdePackages.kdenlive filezilla
+    gimp nicotine-plus transmission_4 retroarch
   ];
 
   # Aqui van las Fuentes Tipograficas
