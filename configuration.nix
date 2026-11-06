@@ -202,7 +202,7 @@
     pciutils
 
     # Mis Programas :
-    librewolf kitty discord telegram-desktop strawberry obs-studio
+    librewolf discord telegram-desktop strawberry obs-studio
     vscodium obsidian libresprite krita kdePackages.kdenlive filezilla
     gimp nicotine-plus transmission_4 retroarch
   ];
