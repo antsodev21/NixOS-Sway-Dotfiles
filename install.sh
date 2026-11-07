@@ -26,4 +26,5 @@ fisher install IlanCosman/tide@v6
 EOF
 
 # Avisa de la existencia de mis apps en AppImage
-echo "### No olvides instalar las apps : Osu!, SKlauncher y Raspberry Pi Imager desde AppImage, ni tampoco olvides configurar tide para los temas del Prompt de fish ###"
+echo "#==No olvides instalar las apps : Osu!, SKlauncher y Raspberry Pi Imager desde AppImage==#" 
+echo "#==Tampoco olvides configurar tide para los temas del Prompt de fish==#"
