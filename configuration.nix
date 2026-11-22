@@ -9,20 +9,19 @@
 #==CONFIGURACION-DE-GRUB-Y-SYSTEMD==#
   # Instala GRUB
 
-  # Modo UEFI  
-  boot.loader = {
-    grub = {
-      enable = true;
-      device = "nodev"; 
-      efiSupport = true;
+    # Modo UEFI  
+    boot.loader = {
+      grub = {
+        enable = true;
+        device = "nodev"; 
+        efiSupport = true;
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
-  };
   
-  # Modo BIOS
-  # boot.loader.grub.enable = true;
-  # boot.loader.grub.device = "/dev/sda";
-
+    # Modo BIOS
+    # boot.loader.grub.enable = true;
+    # boot.loader.grub.device = "/dev/sda";
 
   # Hace que SystemD Ignore el Boton de Apagado
   services.logind.settings.Login.HandlePowerKey = "ignore";
@@ -204,7 +203,7 @@
     # Mis Programas :
     librewolf discord telegram-desktop strawberry obs-studio
     vscodium obsidian libresprite krita kdePackages.kdenlive filezilla
-    gimp nicotine-plus transmission_4 retroarch
+    vlc gimp nicotine-plus transmission_4 retroarch
   ];
 
   # Aqui van las Fuentes Tipograficas
