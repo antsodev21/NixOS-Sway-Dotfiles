@@ -25,6 +25,10 @@ fisher install jorgebucaran/fisher
 fisher install IlanCosman/tide@v6
 EOF
 
+# Instala mis programas en flatpak
+flatpak remote-add --user --if-not-exists freesmlauncher https://flatpak.freesmlauncher.org/freesmlauncher.flatpakrepo
+flatpak install --user freesmlauncher org.freesmlauncher.FreesmLauncher
+flatpak install org.raspberrypi.rpi-imager ru.linux_gaming.PortProton org.vinegarhq.Sober
+
 # Avisa de la existencia de mis apps en AppImage
-echo "#==No olvides instalar las apps : Osu!, SKlauncher y Raspberry Pi Imager desde AppImage==#" 
-echo "#==Tampoco olvides configurar tide para los temas del Prompt de fish==#"
+echo "No olvides instalar las apps : Osu! y Lynx-Share desde AppImage"

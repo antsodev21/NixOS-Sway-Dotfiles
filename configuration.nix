@@ -6,6 +6,17 @@
       ./hardware-configuration.nix
     ];
 
+#==CONFIGURACION-DE-KERNEL-MODULES==#
+  # broadcom-sta-dkms
+  # boot.kernelModules = [ "wl" ];
+  # boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
+  # boot.blacklistedKernelModules = [ "b43" "bcma" "ssb" "brcmfmac" "brcmsmac" ];
+
+  # DKMS-Inseguros
+  # nixpkgs.config.permittedInsecurePackages = [
+  #   "broadcom-sta-6.30.223.271-57-6.18.64"
+  # ];
+
 #==CONFIGURACION-DE-GRUB-Y-SYSTEMD==#
   # Instala GRUB
 
@@ -46,8 +57,8 @@
   # Establece el Nombre del Host (Asus)
   networking.hostName = "NixOS-Vivobook-15";
 
-  # Establece el Nombre del Host (Dell)
-  # networking.hostName = "NixOS-Latitude-7280";
+  # Establece el Nombre del Host (Macbook)
+  # networking.hostName = "NixOS-Macbook-Pro";
 
   # Habilita la Red
   networking.networkmanager.enable = true;
@@ -196,14 +207,13 @@
     papirus-icon-theme graphite-cursors tokyonight-gtk-theme
 
     # Miscelaneos :
-    ximimoments.katifetch git curl wget htop btop cava nyancat
-    android-tools nicotine-plus podman distrobox virt-manager
-    pciutils
+    ximimoments.katifetch git curl wget htop btop cava python3 pipx nyancat
+    android-tools nicotine-plus podman distrobox virt-manager pciutils
 
     # Mis Programas :
     librewolf discord telegram-desktop strawberry obs-studio
     vscodium obsidian libresprite krita kdePackages.kdenlive filezilla
-    vlc gimp nicotine-plus transmission_4 retroarch
+    vlc gimp nicotine-plus transmission_4 retroarch gearlever
   ];
 
   # Aqui van las Fuentes Tipograficas
@@ -216,6 +226,15 @@
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true; 
+  };
+
+  # Habilitar Appimages
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+    package = pkgs.appimage-run.override {
+      extraPkgs = pkgs: [ pkgs.icu ];
+    };
   };
 
 #==NIX-USER-REPOSITORY==#
