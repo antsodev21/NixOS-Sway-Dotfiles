@@ -31,4 +31,4 @@ flatpak install --user freesmlauncher org.freesmlauncher.FreesmLauncher
 flatpak install org.raspberrypi.rpi-imager ru.linux_gaming.PortProton org.vinegarhq.Sober
 
 # Avisa de la existencia de mis apps en AppImage
-echo "No olvides instalar las apps : Osu! y Lynx-Share desde AppImage"
+echo "No olvides instalar las apps : Osu! desde AppImage"
